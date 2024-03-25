@@ -1,0 +1,10 @@
+Story: HTML /JS TA sõnadeKontroll veebilehe loomine
+
+Tasks:
+Js - Random sõnade genereerimine masiivist
+Sõnade liisamine masiivi ja tõlkimine
+JS - kontroll koodi loomine
+HTML - veebilehe värsendamise nupu loomine ja katsemine
+Veebilehe testimine
+Vigade parandamine
+Koodi kommenteerimine
