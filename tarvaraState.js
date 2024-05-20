@@ -1,4 +1,6 @@
 let currentSyna = "";
+let currentLanguage = "et";
+
 const synad = [
     'teostus',
     'algoritm',
@@ -32,6 +34,7 @@ const synad = [
     'arendamine',
     'validaarimine'
 ];
+
 const ruSynad = [
     'выполнение',
     'алгоритм',
@@ -65,19 +68,19 @@ const ruSynad = [
     'разработка',
     'Проверка'
 ];
-function randomSyna() {
+
+// Funktsioon juhusliku eestikeelse sõna genereerimiseks ja kuvamiseks
+function randomSynaET() {
     const juhuslikSyna = Math.floor(Math.random() * synad.length);
     currentSyna = synad[juhuslikSyna];
+    currentLanguage = "et";
     document.getElementById("random-syna").innerHTML = currentSyna;
 }
 
-function kontroll() {
-    const inputValue = document.getElementById("kontroll").value;
-    const index = synad.indexOf(currentSyna);
-
-    if (ruSynad[index] === inputValue) {
-        document.getElementById("vastus").innerText = "õigus";
-    } else {
-        document.getElementById("vastus").innerText = "vale";
-    }
+// Funktsioon juhusliku vene sõna genereerimiseks ja selle kuvamiseks
+function randomSynaRU() {
+    const juhuslikSyna = Math.floor(Math.random() * ruSynad.length);
+    currentSyna = ruSynad[juhuslikSyna];
+    currentLanguage = "ru";
+    document.getElementById("random-syna").innerHTML = currentSyna;
 }
