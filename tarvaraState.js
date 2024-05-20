@@ -1,6 +1,5 @@
 let currentSyna = "";
 let currentLanguage = "et";
-
 const synad = [
     'teostus',
     'algoritm',
@@ -68,7 +67,6 @@ const ruSynad = [
     'разработка',
     'Проверка'
 ];
-
 // Funktsioon juhusliku eestikeelse sõna genereerimiseks ja kuvamiseks
 function randomSynaET() {
     const juhuslikSyna = Math.floor(Math.random() * synad.length);
@@ -76,11 +74,29 @@ function randomSynaET() {
     currentLanguage = "et";
     document.getElementById("random-syna").innerHTML = currentSyna;
 }
-
 // Funktsioon juhusliku vene sõna genereerimiseks ja selle kuvamiseks
 function randomSynaRU() {
     const juhuslikSyna = Math.floor(Math.random() * ruSynad.length);
     currentSyna = ruSynad[juhuslikSyna];
     currentLanguage = "ru";
     document.getElementById("random-syna").innerHTML = currentSyna;
+}
+// Funktsioon, mis kontrollib, kas sisestatud tõlge on õige.
+function kontroll() {
+    const inputValue = document.getElementById("kontroll").value.trim().toLowerCase();
+    let index, correctAnswer;
+
+    if (currentLanguage === "et") {
+        index = synad.indexOf(currentSyna);
+        correctAnswer = ruSynad[index].toLowerCase();
+    } else {
+        index = ruSynad.indexOf(currentSyna);
+        correctAnswer = synad[index].toLowerCase();
+    }
+
+    if (correctAnswer === inputValue) {
+        document.getElementById("vastus").innerText = "Õige";
+    } else {
+        document.getElementById("vastus").innerText = "Vale";
+    }
 }
